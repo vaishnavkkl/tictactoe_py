@@ -25,6 +25,8 @@ def play_game():
     elif winner == None:
         print('Tied')
 
+
+
 def dis_board():
     print(board[0] + '|' + board[1] + '|' + board[2])
     print(board[3] + '|' + board[4] + '|' + board[5])
@@ -70,7 +72,7 @@ def check_rows():
     row_3 = board[6] == board[7] == board[8] != "_"
 
     if row_1 or row_2 or row_3:
-        game_still_going = False
+       game_still_going = False
 
     if row_1:
         return board[0]
@@ -89,6 +91,7 @@ def check_columns():
     column_3 = board[6] == board[7] == board[8] != "_"
 
     if column_1 or column_2 or column_3:
+
         game_still_going = False
 
     if column_1:
@@ -110,6 +113,7 @@ def check_diagonals():
     diagonal_2 = board[2] == board[4] == board[6] != "_"
 
     if diagonal_1 or diagonal_2:
+
         game_still_going = False
 
     if diagonal_1:
@@ -124,7 +128,7 @@ def check_diagonals():
 def check_if_tie():
     global game_still_going
 
-    if '-' not in board:
+    if '_' not in board:
         game_still_going = False
         return True
     else:
